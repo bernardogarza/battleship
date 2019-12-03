@@ -1,3 +1,5 @@
+/* eslint-disable import/prefer-default-export */
+
 import './styles/style.scss';
 import { putShip, resetValues } from './partials/put-ship';
 import { createShips } from './partials/create-ships';
@@ -7,7 +9,7 @@ import { randomPosition } from './partials/random-position';
 import { randomShips } from './partials/random';
 import { reset } from './partials/reset-game';
 
-let table2 = document.querySelector('#table2');
+const table2 = document.querySelector('#table2');
 
 putShip();
 createShips();

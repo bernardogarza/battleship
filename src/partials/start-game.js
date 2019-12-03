@@ -1,37 +1,39 @@
-import { ships } from "./create-ships";
-import { shipsCPU } from "./create-ships-cpu";
+/* eslint-disable import/prefer-default-export */
+import { ships } from './create-ships';
+import { shipsCPU } from './create-ships-cpu';
 
-let startGameButton = document.querySelector('#start-game');
-let selectArea = document.querySelector('#select-area');
-let table1 = document.querySelector('#table1');
-let table2 = document.querySelector('#table2');
+const startGameButton = document.querySelector('#start-game');
+const selectArea = document.querySelector('#select-area');
+const table1 = document.querySelector('#table1');
+const table2 = document.querySelector('#table2');
 let turn = 0;
-let tablePlayerArray = [];
-let messageArea = document.querySelector('#message-area');
+const tablePlayerArray = [];
+const messageArea = document.querySelector('#message-area');
 
-let pushPlayerTableArray = () => {
+const pushPlayerTableArray = () => {
   for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
       tablePlayerArray.push(table1.firstChild.children[i].children[j]);
     }
   }
-}
+};
 
-let randomClick = () => {
-  let num = tablePlayerArray.length;
-  let randomCell = Math.floor(Math.random() * num);
+const randomClick = () => {
+  const num = tablePlayerArray.length;
+  const randomCell = Math.floor(Math.random() * num);
   tablePlayerArray[randomCell].click();
   tablePlayerArray.splice(randomCell, 1);
-}
+};
 
-let turns = turn => {
-  if (turn % 2 === 1){
+const turns = (turn) => {
+  if (turn % 2 === 1) {
     randomClick();
   }
-}
+};
 
-let finishGame = (shipArr, turn) => {
-  if (shipArr[0].isSink && shipArr[1].isSink && shipArr[2].isSink && shipArr[3].isSink && shipArr[4].isSink) {
+const finishGame = (shipArr, turn) => {
+  if (shipArr[0].isSink && shipArr[1].isSink && shipArr[2].isSink
+  && shipArr[3].isSink && shipArr[4].isSink) {
     table2.style.pointerEvents = 'none';
     if (turn % 2 === 0) {
       messageArea.innerHTML = 'CPU Win';
@@ -41,9 +43,9 @@ let finishGame = (shipArr, turn) => {
   } else {
     turns(turn);
   }
-}
+};
 
-let addActionToCell = (table, shipArr) => {
+const addActionToCell = (table, shipArr) => {
   for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
       table.firstChild.children[i].children[j].addEventListener('click', function clickCell(e) {
@@ -60,25 +62,24 @@ let addActionToCell = (table, shipArr) => {
           } else {
             e.target.classList.add('miss-hit');
           }
-          console.log(e.target);
         }
         e.target.removeEventListener('click', clickCell);
         turn++;
         finishGame(shipArr, turn);
-      })
+      });
     }
   }
-}
+};
 
 
-let startGame = () => {
+const startGame = () => {
   startGameButton.addEventListener('click', () => {
     selectArea.classList.add('hide');
     addActionToCell(table1, ships);
     addActionToCell(table2, shipsCPU);
     table1.style.pointerEvents = 'none';
     startGameButton.disabled = true;
-  })
-}
+  });
+};
 
-export { startGame, pushPlayerTableArray }
+export { startGame, pushPlayerTableArray };

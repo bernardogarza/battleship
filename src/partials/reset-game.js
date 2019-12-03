@@ -1,9 +1,10 @@
-let resetButton = document.querySelector('#reset-game');
+/* eslint-disable import/prefer-default-export */
+const resetButton = document.querySelector('#reset-game');
 
 const reset = () => {
-    resetButton.addEventListener('click', e => {
-        location.reload();
-    });
-}
+  resetButton.addEventListener('click', () => {
+    location.reload();
+  });
+};
 
-export { reset }
+export { reset };

@@ -1,14 +1,17 @@
-import { randomPosition } from "./random-position";
-import { ships } from "./create-ships";
-import { enableStartGameButton, cleanTable, cleanShipCells, disableSelectionOnRandom } from "./put-ship";
+/* eslint-disable import/prefer-default-export */
+import { randomPosition } from './random-position';
+import { ships } from './create-ships';
+import {
+  enableStartGameButton, cleanTable, cleanShipCells, disableSelectionOnRandom,
+} from './put-ship';
 
-let table1 = document.querySelector('#table1');
-let randomButton = document.querySelector('#random');
+const table1 = document.querySelector('#table1');
+const randomButton = document.querySelector('#random');
 let randomCount = 0;
 
-let randomShips = () => {
+const randomShips = () => {
   randomButton.addEventListener('click', () => {
-    disableSelectionOnRandom()
+    disableSelectionOnRandom();
     cleanTable(table1);
     cleanShipCells(ships);
     randomPosition(ships, table1, 'ship');
@@ -16,7 +19,7 @@ let randomShips = () => {
       enableStartGameButton();
     }
     randomCount++;
-  })
-}
+  });
+};
 
 export { randomShips };
