@@ -13,4 +13,4 @@ Kalib Hackin - [naguihw@gmail.com](naguihw@gmail.com)
 5. Run `npm test` or go to the project scripts and run the one called test in your code editor if it has it.
 6. Open [http://localhost:3000/](http://localhost:3000/) in your browser.
 
-Live Demo:
+Live Demo: https://raw.githack.com/NaguiHW/battleship/release/dist/index.html
