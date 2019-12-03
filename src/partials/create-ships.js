@@ -2,7 +2,7 @@ import { Ship } from './ship-class';
 
 let ships = [];
 
-let createShips = () => {
+let createShips = ships => {
   ships.push(Ship(0, 'Ship 1', 5));
   ships.push(Ship(1, 'Ship 2', 4));
   ships.push(Ship(2, 'Ship 3', 3));
