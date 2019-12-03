@@ -1,6 +1,7 @@
 import './styles/style.scss';
-import { putship } from './partials/put-ship';
+import { putShip, resetValues } from './partials/put-ship';
 import { createShips } from './partials/create-ships';
 
-putship();
+putShip();
 createShips();
+resetValues();

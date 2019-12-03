@@ -25,12 +25,14 @@
       width: 100px;
       text-align: center;
       button {
-        width: 95px;
+        width: 125px;
+        margin-top: 5px
       }
     }
   }
   #game-area {
     display: flex;
+    margin-top: 40px;
     .table {
       width: 325px;
       .top {

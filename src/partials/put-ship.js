@@ -6,6 +6,8 @@ let selectedOrientation = document.querySelector('#ship-orientation');
 let selectedRow = document.querySelector('#select-row');
 let selectedColumn = document.querySelector('#select-column');
 let table1 = document.querySelector('#table1');
+let startGameButton = document.querySelector('#start-game');
+let count = 0;
 
 
 let validateEmpty = (ship, orientation, row, column) => {
@@ -83,12 +85,58 @@ let markCell = (table, shipSel, shipArr, orientation, row, column, addClass) => 
   }
 }
 
-let putship = () => {
+let disableSelection = () => {
+  selectedShip.options[selectedShip.options.selectedIndex].disabled = true;
+}
+
+let resetInputValues = () => {
+  selectedShip.value = '';
+  selectedOrientation.value = '';
+  selectedRow.value = '';
+  selectedColumn.value = '';
+}
+
+let resetValues = () => {
+  resetInputValues();
+  startGameButton.disabled = true;
+  count = 0;
+}
+
+let addCount = () => {
+  count++;
+}
+
+let enableStartGameButton = () => {
+  startGameButton.disabled = false;
+  startGame();
+}
+
+let cleanTable = table => {
+  for (let i = 0; i < 10; i++) {
+    for (let j = 0; j < 10; j++) {
+      table.firstChild.children[i].children[j].classList.remove('ship');
+    }
+  }
+}
+
+let cleanShipCells = ship => {
+  for (let i = 0; i < ship.length; i++) {
+    ship[i].cells = []
+  }
+}
+
+let putShip = () => {
   putShipButton.addEventListener('click', () => {
     if (validateEmpty(selectedShip.value, selectedOrientation.value, selectedRow.value, selectedColumn.value) && validateLength(selectedShip.value, ships, selectedOrientation.value, selectedRow.value, selectedColumn.value) && validateCell(table1, selectedShip.value, ships, selectedOrientation.value, selectedRow.value, selectedColumn.value)) {
       markCell(table1, selectedShip.value, ships, selectedOrientation.value, selectedRow.value, selectedColumn.value, 'ship');
+      addCount();
+      disableSelection();
+      resetInputValues();
+      if (count == 5) {
+        enableStartGameButton();
+      }
     }
-  })
+  });
 }
 
-export { putship };
+export { putShip, resetValues, cleanTable, cleanShipCells };
