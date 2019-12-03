@@ -68,11 +68,18 @@
   background-color: #850b48; }
 
 .miss-hit {
-  background-color: #1c1c8a; }
+  background-color: #12612c; }
 
 .ship-cpu {
   background-color: indigo; }
 
 .hide {
   display: none !important; }
+
+#message-area {
+  color: green;
+  text-align: center;
+  margin: 100px;
+  font-size: 28px;
+  font-weight: bold; }
 
