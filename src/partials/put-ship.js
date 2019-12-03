@@ -1,4 +1,5 @@
 import { ships } from './create-ships'
+import { startGame } from './start-game';
 
 let putShipButton = document.querySelector('#put-ship');
 let selectedShip = document.querySelector('#ships-list');
@@ -139,4 +140,4 @@ let putShip = () => {
   });
 }
 
-export { putShip, resetValues, cleanTable, cleanShipCells };
+export { putShip, resetValues, cleanTable, cleanShipCells, validateLength, validateCell, markCell };

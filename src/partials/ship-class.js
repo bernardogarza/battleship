@@ -5,7 +5,7 @@ let Ship = (id, name, size) => {
     size,
     cells: [],
     cellsHit: [],
-    sink: false
+    isSink: false
   }
 }
 
