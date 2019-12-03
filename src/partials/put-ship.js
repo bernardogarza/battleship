@@ -90,6 +90,12 @@ let disableSelection = () => {
   selectedShip.options[selectedShip.options.selectedIndex].disabled = true;
 }
 
+let disableSelectionOnRandom = () => {
+  for(let i = 0; i< selectedShip.options.length; i += 1){
+    selectedShip.options[i].disabled = true;
+  }
+}
+
 let resetInputValues = () => {
   selectedShip.value = '';
   selectedOrientation.value = '';
@@ -140,4 +146,4 @@ let putShip = () => {
   });
 }
 
-export { putShip, resetValues, cleanTable, cleanShipCells, validateLength, validateCell, markCell };
+export { putShip, resetValues, cleanTable, cleanShipCells, validateLength, validateCell, markCell, enableStartGameButton, disableSelectionOnRandom };

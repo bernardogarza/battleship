@@ -21,9 +21,11 @@
       width: 100px;
       text-align: center; }
       .container #select-area .put-ship button {
-        width: 95px; }
+        width: 125px;
+        margin-top: 5px; }
   .container #game-area {
-    display: flex; }
+    display: flex;
+    margin-top: 40px; }
     .container #game-area .table {
       width: 325px; }
       .container #game-area .table .top {
