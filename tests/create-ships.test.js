@@ -19,3 +19,4 @@ test('Should return ship info', () => {
 
   expect(new Ship(0, 'Ship 1', 5)).toMatchObject(ship)
 });
+

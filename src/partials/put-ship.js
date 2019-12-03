@@ -146,4 +146,4 @@ let putShip = () => {
   });
 }
 
-export { putShip, resetValues, cleanTable, cleanShipCells, validateLength, validateCell, markCell, enableStartGameButton, disableSelectionOnRandom };
+export { putShip, resetValues, cleanTable, cleanShipCells, validateLength, validateCell, markCell, enableStartGameButton, disableSelectionOnRandom, validateEmpty };

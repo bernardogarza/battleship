@@ -60,6 +60,7 @@ let addActionToCell = (table, shipArr) => {
           } else {
             e.target.classList.add('miss-hit');
           }
+          console.log(e.target);
         }
         e.target.removeEventListener('click', clickCell);
         turn++;
