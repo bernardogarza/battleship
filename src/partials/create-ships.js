@@ -13,5 +13,6 @@ const createShips = () => {
 };
 
 const ships = createShips();
+const shipsCPU = createShips();
 
-export { ships, createShips };
+export { ships, shipsCPU, createShips };

@@ -5,7 +5,13 @@ const Ship = (id, name, size) => ({
   size,
   cells: [],
   cellsHit: [],
-  isSink: false,
+  isSink: () => {
+    if (cells == cellsHit) {
+      return true
+    } else {
+      return false
+    }
+  }
 });
 
 export { Ship };

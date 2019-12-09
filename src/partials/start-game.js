@@ -1,6 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { ships } from './create-ships';
-import { shipsCPU } from './create-ships-cpu';
+import { ships, shipsCPU } from './create-ships';
 
 const startGameButton = document.querySelector('#start-game');
 const selectArea = document.querySelector('#select-area');
@@ -55,9 +54,10 @@ const addActionToCell = (table, shipArr) => {
             e.target.classList.remove('ship-cpu');
             e.target.classList.add('ship-hit');
             shipArr[k].cellsHit.push(e.target);
-            if (shipArr[k].cells.length === shipArr[k].cellsHit.length) {
-              shipArr[k].isSink = true;
-            }
+            shipArr[k].isSink();
+            // if (shipArr[k].cells.length === shipArr[k].cellsHit.length) {
+            //   shipArr[k].isSink = true;
+            // }
             break;
           } else {
             e.target.classList.add('miss-hit');
