@@ -1,17 +1,22 @@
-/* eslint-disable import/prefer-default-export */
-const Ship = (id, name, size) => ({
-  id,
-  name,
-  size,
-  cells: [],
-  cellsHit: [],
-  isSink: () => {
-    if (cells == cellsHit) {
+const Ship = (id_input, size_input) => {
+  let id = id_input;
+  let size = size_input;
+  let cells = [];
+  let cellsHits = [];
+  let isSink = () => {
+    if (cellsHits.length === size) {
       return true
-    } else {
-      return false
     }
+    return false
   }
-});
 
-export { Ship };
+  return {
+    id,
+    size,
+    cells,
+    cellsHits,
+    isSink
+  }
+}
+
+export default Ship;
