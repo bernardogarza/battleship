@@ -12,7 +12,7 @@ const DOMelements = (() => {
   const resetButton = document.querySelector('#reset-game');
   const selectArea = document.querySelector('#select-area');
   const tablePlayerArray = [];
-  let turn = 0
+  let turn = 0;
 
   const pushPlayerTableArray = () => {
     for (let i = 0; i < 10; i++) {
@@ -24,7 +24,7 @@ const DOMelements = (() => {
 
   const enableStartButton = () => {
     startGameButton.disabled = true;
-  }
+  };
 
   const disableSelection = () => {
     selectedShip.options[selectedShip.options.selectedIndex].disabled = true;
@@ -57,7 +57,7 @@ const DOMelements = (() => {
         table2.children[i].children[j].classList.remove('ship');
       }
     }
-  }
+  };
 
   const markCells = (board, table, auto) => {
     if (auto) {
@@ -65,12 +65,12 @@ const DOMelements = (() => {
     }
     for (let i = 0; i < table.children.length; i++) {
       for (let j = 0; j < table.children[i].children.length; j++) {
-        if (board.tableGrid[i][j].empty == false) {
+        if (board.tableGrid[i][j].empty === false) {
           table.children[i].children[j].classList.add('ship');
         }
       }
     }
-  }
+  };
 
   const addActionToCells = (board1, board2, human, CPU) => {
     startGameButton.addEventListener('click', () => {
@@ -88,8 +88,8 @@ const DOMelements = (() => {
             }
             CPU.win(turn, board1.gameOver(), table2, messageArea);
             turn++;
-            e.target.removeEventListener('click', clickCell)
-          })
+            e.target.removeEventListener('click', clickCell);
+          });
           table2.children[i].children[j].addEventListener('click', function clickCell(e) {
             if (board2.tableGrid[i][j].empty === false && board2.tableGrid[i][j].hit === false) {
               human.attack(board2, table2, i, j, 'ship-hit');
@@ -101,12 +101,12 @@ const DOMelements = (() => {
               turn++;
               CPU.randomAttack(table1);
             }
-            e.target.removeEventListener('click', clickCell)
-          })
+            e.target.removeEventListener('click', clickCell);
+          });
         }
-      }  
-    })
-  }
+      }
+    });
+  };
 
   const putRandomShipsButtonAction = (board1, board2) => {
     putRandomShipsButton.addEventListener('click', () => {
@@ -115,24 +115,25 @@ const DOMelements = (() => {
       board2.putShipAuto();
       startGameButton.disabled = false;
       disableSelectionOnRandom();
-    })
-  }
+    });
+  };
 
-  const putShipButtonAction = (board) =>{
+  const putShipButtonAction = (board) => {
     let count = 0;
-    putShipButton.addEventListener('click', () =>{
-      if (board.putShipManually(parseInt(selectedShip.value), parseInt(selectedRow.value), parseInt(selectedColumn.value), parseInt(selectedOrientation.value))) {
+    putShipButton.addEventListener('click', () => {
+      if (board.putShipManually(parseInt(selectedShip.value), parseInt(selectedRow.value),
+        parseInt(selectedColumn.value), parseInt(selectedOrientation.value))) {
         markCells(board, table1);
         disableSelection();
         resetInputValues();
         putRandomShipsButton.disabled = true;
-        count++
+        count++;
         if (count === 5) {
           startGameButton.disabled = false;
         }
-      };
-    })
-  }
+      }
+    });
+  };
 
   return {
     enableStartButton,
@@ -140,8 +141,8 @@ const DOMelements = (() => {
     putShipButtonAction,
     addActionToCells,
     pushPlayerTableArray,
-    reset
-  }
+    reset,
+  };
 })();
 
 export default DOMelements;
