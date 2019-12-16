@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  .title {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+  }
+  #select-area {
+    display: flex;
+    height: 50px;
+    .dropdown {
+      width: 175px;
+      p {
+        font-size: 18px;
+        margin: 0;
+      }
+    }
+    .put-ship {
+      width: 100px;
+      text-align: center;
+      button {
+        width: 125px;
+        margin-top: 5px
+      }
+    }
+  }
+  #game-area {
+    display: flex;
+    margin-top: 40px;
+    .table {
+      width: 325px;
+      .top {
+        display: flex;
+        .col-num {
+          width: 25px;
+          height: 25px;
+          margin: 1px;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+      .bottom {
+        display: flex;
+        .row-cell {
+          font-weight: bold;
+          width: 25px;
+          height: 25px;
+          margin: 2px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        td {
+          width: 25px;
+          height: 25px;
+          margin: 1px;
+          border: 1px solid gray;
+        }
+      }
+    }
+    .start-game-area {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      button {
+        width: 75px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.ship {
+  background-color: rgb(106, 106, 165);
+}
+
+.ship-hit {
+  background-color: rgb(133, 11, 72);
+}
+
+.miss-hit {
+  background-color: rgb(18, 97, 44);
+}
+
+.ship-cpu {
+  background-color: indigo;
+}
+
+.hide {
+  display: none !important;
+}
+
+#message-area{
+  color: green;
+  text-align: center;
+  margin: 100px;
+  font-size: 28px;
+  font-weight: bold;
+}
