@@ -1,9 +1,20 @@
 # Battleship game
-This a project for the Microverse main curriculum
+This project is built with Vanilla JS. It's the classic Battleship game where you play against the computer.
+
 ### Author:
+
+
 Bernardo Garza - [bernardo.g.landa@gmail.com](bernardo.g.landa@gmail.com)
 
 Kalib Hackin - [naguihw@gmail.com](naguihw@gmail.com)
+
+## Screenshot
+
+![Battleship](Screenshot.png?raw=true "Battleship")
+
+#
+
+
 ### Instructions:
 **In order to run the project you'll need [NodeJS](https://nodejs.org)**
 1. Clone the project
