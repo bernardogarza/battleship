@@ -10,7 +10,9 @@ Kalib Hackin - [naguihw@gmail.com](naguihw@gmail.com)
 
 ## Screenshot
 
+![Battleship](Screenshot2.png?raw=true "Battleship")
 ![Battleship](Screenshot.png?raw=true "Battleship")
+
 
 #
 
