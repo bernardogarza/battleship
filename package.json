@@ -1,7 +1,6 @@
 {
   "name": "battleship",
   "version": "1.0.0",
-  "homepage": "https://bernardogarza.github.io/battleship/",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/NaguiHW/battleship/issues"
   },
-  "homepage": "https://github.com/NaguiHW/battleship#readme",
+  "homepage": "https://github.com/NaguiHW/battleship",
   "devDependencies": {
     "@babel/preset-env": "^7.7.4",
     "css-loader": "^3.2.0",
